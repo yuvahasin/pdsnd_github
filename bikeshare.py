@@ -35,12 +35,12 @@ def get_filters():
        if city in CITIES:
            break
 
-    # get user input for month (all, january, february, ... , june)
-    month = get_user_input('All right! now it\'s time to provide us a month name '\
+    # get user input for month (all, january, february, ... , june) updated common function to get user inputs
+    month = get_user_input_info('All right! now it\'s time to provide us a month name '\
                     'or just say \'all\' to apply no month filter. \n(e.g. all, january, february, march, april, may, june) \n> ', MONTHS)
 
-    # get user input for day of week (all, monday, tuesday, ... sunday)
-    day = get_user_input('One last thing. Could you type one of the week day you want to analyze?'\
+    # get user input for day of week (all, monday, tuesday, ... sunday) updated common function to get user inputs
+    day = get_user_input_info('One last thing. Could you type one of the week day you want to analyze?'\
                    ' You can type \'all\' again to apply no day filter. \n(e.g. all, monday, tuesday or any day) \n> ', DAYS)
 
     print('-'*40)
@@ -241,7 +241,8 @@ def display_data(df):
             json_row = json.dumps(parsed_row, indent=2)
             print(json_row)
 
-def get_user_input(message, user_list):
+#refactoring this code
+def get_user_input_info(message, user_list):
     """
     An utility function to obtain user specific input value
     Args:
